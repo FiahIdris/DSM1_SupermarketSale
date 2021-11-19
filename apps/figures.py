@@ -12,12 +12,12 @@ from app import app
 from io import BytesIO
 import base64
 
-print(daq.__version__)
 
 df = pd.read_csv('./clean_dataset.csv')
 fig = px.histogram(df, x=df["total"], nbins=100)
 df_numerical_column = ['unit_price', 'total', 'cogs', 'gross_income']
-df_piechart_column = ['branch', 'city', 'customer_type', 'gender', 'payment']
+df_piechart_column = ['branch', 'city', 'customer_type',
+                      'gender', 'payment', 'product_line']
 df_figure_type = ['pie', 'bar']
 
 df_average_rating = df.groupby('product_line')[
